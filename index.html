@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paris Événements - Recherche</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+    <meta name="theme-color" content="#1a1a1a">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Recherche d'événements à Paris</h1>
+        
+        <div class="card">
+            <div class="card-body">
+                <form id="searchForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="eventDate" class="form-label">Date spécifique (optionnel)</label>
+                            <input type="date" class="form-control" id="eventDate">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="keyword" class="form-label">Mot-clé (optionnel)</label>
+                            <input type="text" class="form-control" id="keyword" placeholder="Rechercher dans le contenu">
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary">Rechercher</button>
+                            <button type="button" id="resetButton" class="btn btn-secondary ms-2">Réinitialiser</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="results" class="mt-4">
+            <!-- Les résultats seront affichés ici -->
+        </div>
+
+        <div id="loading" class="text-center d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Chargement...</span>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div id="pagination" class="d-flex justify-content-center my-4">
+            <nav aria-label="Navigation des pages">
+                <ul class="pagination">
+                    <li class="page-item disabled" id="prevPage">
+                        <a class="page-link" href="#" aria-label="Précédent">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item disabled" id="pageInfo">
+                        <span class="page-link">Page <span id="currentPage">1</span> sur <span id="totalPages">1</span></span>
+                    </li>
+                    <li class="page-item disabled" id="nextPage">
+                        <a class="page-link" href="#" aria-label="Suivant">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Modal pour les détails d'événement -->
+        <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="eventModalLabel">Détails de l'événement</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Le contenu sera injecté dynamiquement -->
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-primary event-link" target="_blank">Plus d'informations</a>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
