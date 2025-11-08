@@ -1,10 +1,10 @@
 # ParisSortie
 
-Une application web moderne pour découvrir les événements à Paris avec une interface élégante et minimaliste.
+Une application web moderne pour découvrir les événements à Paris avec une interface minimaliste.
 
 ## Caractéristiques
 
-- Interface utilisateur avec design glass morphism
+- Interface utilisateur simple
 - Système de pagination dynamique
 - Affichage des événements avec images et détails
 - Filtrage des événements
@@ -23,7 +23,7 @@ Une application web moderne pour découvrir les événements à Paris avec une i
 
 1. Clonez ce dépôt
 ```bash
-git clone https://github.com/votre-username/ParisSortie.git
+git clone https://github.com/ettorhake/ParisSortie.git
 ```
 
 2. Ouvrez le dossier du projet
